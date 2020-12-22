@@ -1,2 +1,7 @@
 *.dll
 *.suo
+*.DotSettings
+*.user
+**/Debug
+**/OnBoardFlash.dat
+**/OnBoardFlash.dat.smd
