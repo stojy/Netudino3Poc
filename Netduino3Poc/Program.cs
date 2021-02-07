@@ -2,6 +2,7 @@ using Microsoft.SPOT;
 using System.Threading;
 using Microsoft.SPOT.Hardware;
 using SecretLabs.NETMF.Hardware.Netduino;
+using SecretLabs.NETMF.Diagnostics;
 
 namespace Netduino3Poc
 {
@@ -10,6 +11,10 @@ namespace Netduino3Poc
         public static void Main()
         {
             Debug.Print("Starting N3 POC");
+
+            // changing the debug interface will reset the board.. the setting is remembered on subsequent boots
+            if (Transport.GetInterface() != TransportInterface.Com1)
+                Transport.SetInterface(TransportInterface.Com1);
 
             Blinky();
         }
